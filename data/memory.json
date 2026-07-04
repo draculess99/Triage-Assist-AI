@@ -1,0 +1,508 @@
+{
+    "demo_session": [
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability: 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 220, 'fbs': 1, 'thalach': 150}. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability: 1.5%\n- Computed Priority Score: 0.1/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment:**\n\n- Disease Probability: 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment:**\n\n- Disease Probability: 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment:**\n\n- Disease Probability: 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment:**\n\n- Disease Probability: 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment:**\n\n- Disease Probability: 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 90, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment:**\n\n- Disease Probability: 0.5%\n- Computed Priority Score: 0.1/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment:**\n\n- Disease Probability: 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.5-flash. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.5-flash):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.5-flash. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.5-flash):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.5-flash. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.5-flash):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.5-flash. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.5-flash):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.0-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.0-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.0-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.0-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.5-flash. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.5-flash):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.5-flash. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.5-flash):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.5-flash. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.5-flash):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-1.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-1.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-2.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-2.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-2.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-2.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-2.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-2.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-flash-latest. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-flash-latest):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-flash-latest. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-flash-latest):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-3.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-3.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-3.5-flash. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-3.5-flash):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-flash-latest. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-flash-latest):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-flash-latest. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-flash-latest):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-3.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-3.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-3.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-3.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-3.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-3.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-3.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-3.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-3.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-3.5-pro):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-flash-latest. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-flash-latest):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]\n\nMake sure your GEMINI_API_KEY environment variable is set."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. LLM: gemini-3.5-pro. Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**LLM Clinical Assessment (gemini-3.5-pro):**\n\n*(Debug - Using API Key from .env: AIzaSyAHdM...)*\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\nLLM Error: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}\n\n*(Debug: The backend tried to use the API key starting with: AIzaSyAHdM...)*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama3-8b-8192). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama3-8b-8192):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\nLLM Error during multi-agent pipeline: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Local Expert System (0 Tokens) (None). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and the XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Local Expert System (0 Tokens) (None). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and the XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Local Expert System (0 Tokens) (None). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and the XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Local Expert System (0 Tokens) (None). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and the XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\n**LOW RISK FOR HEART DISEASE**\n\n**SOAP Note**\n\n**Subjective:**\nThe patient, a 50-year-old male, presents with symptoms and risk factors that have been analyzed based on the provided data. However, limited information is available regarding the patient's medical history, current symptoms, and lifestyle factors, which are crucial for a comprehensive assessment. The patient's subjective experience, including the character, duration, and precipitating factors of the chest pain, could not be fully assessed due to the lack of detailed clinical notes.\n\n**Objective:**\nVital signs and laboratory results indicate:\n- Resting Blood Pressure: 120 mmHg, which is considered elevated (pre-hypertension) and warrants monitoring.\n- Cholesterol Level: 200 mg/dL, classified as borderline high.\n- Fasting Blood Sugar: The reported value of 0 is not physiologically plausible and suggests an error in data entry or measurement, requiring clarification or correction.\n- Maximum Heart Rate Achieved: 150 beats per minute during exercise, within normal limits for an adult.\n- Chest Pain Type (cp): 1, indicating typical angina, though the significance cannot be fully assessed without additional details.\n\n**Assessment:**\nBased on the available data, including the XGBoost predicted probability of heart disease (2.7%) and the assigned Priority Score (0.3/10), the patient is considered to be at **LOW RISK** for heart disease. Notwithstanding, the borderline high cholesterol level and the presence of typical angina are noteworthy and necessitate closer monitoring and potential lifestyle interventions. The elevated blood pressure, although not critically high, should also be monitored and addressed as part of the patient's overall cardiovascular risk management.\n\n**Plan:**\n1. **Monitoring and Evaluation**: Regular monitoring of the patient's cholesterol levels and blood pressure, with a focus on achieving optimal values through lifestyle modifications and, if necessary, pharmacological interventions.\n2. **Lifestyle Assessment and Counseling**: A detailed assessment of the patient's lifestyle factors, including diet, physical activity level, and smoking status, to provide personalized advice on reducing cardiovascular risk.\n3. **Diagnostic Tests**: Consideration of additional diagnostic tests if symptoms persist or worsen, to fully evaluate the nature of the chest pain and assess for any underlying cardiac conditions.\n4. **Comprehensive Clinical Evaluation**: A thorough clinical evaluation, including a detailed medical history and physical examination, to refine the preliminary assessment and guide management decisions.\n5. **Follow-Up**: Regular follow-up appointments to assess the patient's response to interventions, adjust the management plan as necessary, and continue to monitor for any changes in cardiovascular risk factors.\n\nThis plan is devised based on the available data and standard medical guidelines for the management of cardiovascular risk factors. It emphasizes the importance of a comprehensive approach, including lifestyle modifications, monitoring of risk factors, and selective use of diagnostic tests to guide patient care."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Local Expert System (0 Tokens) (None). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and the XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\n**Low Risk**\n**SOAP Note**\n\n**Subjective:**\nThe patient is a 50-year-old male presenting with a history of typical angina. The patient's subjective reports and medical history have been considered in this preliminary assessment.\n\n**Objective:**\nThe patient's vital signs and medical history are as follows:\n- Age: 50\n- Sex: Male\n- Chest Pain (cp): Typical angina\n- Resting Blood Pressure (trestbps): 120 mmHg (systolic value provided; diastolic value not available)\n- Cholesterol (chol): 200 mg/dL (borderline high)\n- Fasting Blood Sugar (fbs): Less than 120 mg/dL\n- Maximum Heart Rate (thalach): 150 beats per minute\n\n**Assessment:**\nBased on the patient's vitals and predictive analytics from an XGBoost model, which estimates a 2.7% probability of heart disease, the patient is classified as having a **Low** risk of heart disease. This assessment takes into account the patient's slightly elevated cholesterol level but recognizes the overall probability of heart disease as relatively low. It is essential to note that this is a preliminary evaluation and that a comprehensive assessment by a healthcare professional is necessary for an accurate diagnosis and individualized treatment plan.\n\n**Plan:**\n1. **Monitoring:** Regular monitoring of blood pressure and cholesterol levels to assess for any changes or trends that may indicate an increased risk of cardiovascular disease.\n2. **Lifestyle Modifications:** Encourage a healthy lifestyle, including a balanced diet and regular exercise, to mitigate the risk of heart disease.\n3. **Follow-up Appointment:** Schedule a follow-up appointment to review the patient's health status, assess the effectiveness of lifestyle modifications, and adjust the treatment plan as necessary.\n4. **Comprehensive Evaluation:** Emphasize the importance of a comprehensive evaluation by a healthcare professional to confirm the diagnosis, assess for other potential risk factors, and develop a personalized treatment plan.\n\nThis SOAP note is based on a preliminary clinical assessment and should not replace a comprehensive evaluation by a healthcare professional. The patient's condition and risk level will be continually reassessed and managed through regular monitoring and follow-up appointments."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Local Expert System (0 Tokens) (None). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and the XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\n**LOW RISK LEVEL**\n**SOAP Note:**\n\n**Subjective:**\nThe patient is a 50-year-old male presenting with typical angina, which is indicative of potential myocardial ischemia. The patient's subjective report of chest pain suggests a need for further evaluation and potential intervention to mitigate this symptom.\n\n**Objective:**\n- Age: 50\n- Sex: Male\n- Chest Pain: Typical angina\n- Resting Blood Pressure: 120 mmHg, which is within the normal range\n- Cholesterol: 200 mg/dL, which is considered elevated\n- Fasting Blood Sugar: Less than 120 mg/dL (actual value to be confirmed)\n- Maximum Heart Rate: 150 beats per minute, which is within normal limits for the patient's age\n- XGBoost Predictive Model Output: 2.7% probability of heart disease, corresponding to a Priority Score of 0.3/10\n\n**Assessment:**\nBased on the patient's presentation, risk factors, and predictive model output, the patient's risk level for heart disease is classified as **LOW**. However, the presence of typical angina and elevated cholesterol levels warrants careful consideration and monitoring. The patient's symptoms and risk factors suggest the need for a comprehensive assessment to rule out any underlying conditions contributing to the patient's symptoms.\n\n**Plan:**\n1. **Lifestyle Modifications:** Encourage the patient to adopt a healthy diet, engage in regular physical activity, and manage stress levels to help mitigate existing risk factors.\n2. **Further Diagnostic Evaluation:** Consider additional diagnostic tests (e.g., exercise stress test, echocardiogram) to further assess cardiac function and rule out any underlying conditions that may be contributing to the patient's symptoms.\n3. **Monitoring and Follow-up:** Schedule regular follow-up appointments to monitor the patient's condition, adjust the treatment plan as necessary, and provide ongoing education on heart health and disease prevention.\n4. **Comprehensive Clinical Evaluation:** Obtain detailed patient history and further clinical notes to tailor the management plan to the patient's specific needs, including the assessment of fasting blood sugar levels and other relevant factors.\n\nThis plan emphasizes a proactive approach to managing the patient's risk factors while closely monitoring their condition to ensure timely intervention if necessary. The patient will be closely followed up to assess the effectiveness of the proposed plan and to make adjustments as needed."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\n**LOW RISK**\n**SOAP Note**\n\n**Subjective:**\nThe patient, a 50-year-old male, presents with a history of chest pain classified as Type 1, indicative of typical angina. The patient's age and sex are acknowledged as non-modifiable risk factors for cardiovascular disease. The patient's subjective symptoms and history are considered in the context of a comprehensive clinical evaluation.\n\n**Objective:**\nThe objective findings include:\n- Resting blood pressure: 120 mmHg, within the normal range.\n- Cholesterol level: 200 mg/dL, considered borderline high according to the American Heart Association.\n- Fasting blood sugar: The value of \"0\" is noted, but its accuracy and relevance to the patient's glucose status are unclear and require further verification.\n- Maximum heart rate achieved: 150 beats per minute, within normal limits for a male of this age during exercise.\n- XGBoost prediction model: Suggests a 2.7% probability of heart disease, corresponding to a low risk profile.\n\n**Assessment:**\nBased on the patient's data and the XGBoost prediction model, the patient is assessed to be at **LOW RISK** for heart disease. However, it is crucial to consider this assessment within the context of a comprehensive clinical evaluation, including a detailed medical history, physical examination, and additional diagnostic tests as necessary. The borderline high cholesterol level and symptoms of typical angina warrant further investigation and management strategies to mitigate cardiovascular risk.\n\n**Plan:**\n1. **Monitoring:** Continue to monitor the patient's cardiovascular risk factors, including blood pressure, cholesterol levels, and glucose levels.\n2. **Lifestyle Modifications:** Encourage a healthy lifestyle, including a balanced diet, regular exercise, and stress management, to reduce the risk of heart disease.\n3. **Follow-up Appointment:** Schedule a follow-up appointment to reassess the patient's risk factors and adjust the management plan as needed.\n4. **Comprehensive Evaluation:** Recommend a thorough medical history, physical examination, and additional diagnostic tests (such as stress tests or lipid profiles) to supplement the preliminary assessment and guide further management.\n5. **Risk Factor Management:** Consider management strategies for the borderline high cholesterol level, which may include dietary changes or medication, under the guidance of a healthcare provider.\n\nThis plan prioritizes patient safety and serves as a foundation for further evaluation and management by a qualified healthcare professional. The patient's risk level will be continuously reassessed, and the management plan will be adjusted accordingly to ensure the best possible outcomes."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\n**LOW RISK FOR HEART DISEASE**\n\n**SOAP Note:**\n\n**S: Subjective:**\nThe patient is a 50-year-old male presenting with typical angina. He reports no issues with fasting blood sugar. The patient's lifestyle habits, including diet, physical activity, smoking status, and alcohol consumption, are not fully detailed but are areas for discussion and potential modification.\n\n**O: Objective:**\n- Age: 50\n- Sex: Male\n- Chest Pain (cp): Typical angina\n- Resting Blood Pressure (trestbps): 120 mmHg (systolic), diastolic value not specified\n- Cholesterol (chol): 200 mg/dL\n- Fasting Blood Sugar (fbs): Less than 120 mg/dL\n- Maximum Heart Rate Achieved (thalach): 150 beats per minute\n- Predictive Analysis using XGBoost: 2.7% probability of having heart disease, Priority Score 0.3 out of 10\n\n**A: Assessment:**\nBased on the provided vitals and predictive analysis, the patient is considered to be at **Low Risk** for heart disease. The slightly elevated cholesterol level and the presence of typical angina are notable and warrant continued monitoring and possibly further investigation to prevent the progression of cardiovascular disease.\n\n**P: Plan:**\n1. **Lifestyle Modifications:** Encourage a balanced diet, regular physical exercise, stress management, and avoidance of smoking and excessive alcohol consumption.\n2. **Monitoring:** Regular follow-up appointments to monitor blood pressure (including both systolic and diastolic values), cholesterol levels, and fasting blood sugar.\n3. **Further Evaluation:** Consider conducting additional tests (e.g., echocardiogram, stress test) if symptoms persist or worsen, to assess cardiac function and rule out any underlying conditions.\n4. **Risk Factor Management:** Address any other risk factors not mentioned (e.g., family history of heart disease, obesity) accordingly.\n5. **Comprehensive Clinical Evaluation:** A detailed medical history, physical examination, and possibly additional diagnostic tests are necessary for a definitive diagnosis and management plan.\n\nThis plan is based on the information provided and is subject to revision following a comprehensive clinical evaluation. All recommendations are general and not a substitute for personalized medical advice."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: K-Means Clustering. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (K-Means Clustering): 15.0%\n- Computed Priority Score: 1.5/10\n\n---\n\n**SOAP Note:**\n\n**Risk Level: UNCERTAIN**\n\n**Subjective:**\nThe patient is a 50-year-old male with an unknown medical history and symptom profile. A thorough medical history and physical examination are necessary to provide a comprehensive clinical assessment.\n\n**Objective:**\nThe patient's vital signs include:\n- Blood pressure: 120 mmHg\n- Cholesterol level: 200 mg/dL\n- Resting heart rate: 150 beats per minute\n- Fasting blood sugar (FBS) level: Unknown (invalid result)\nThe K-Means Clustering algorithm predicts a 15.0% probability of heart disease, corresponding to a Priority Score of 1.5/10.\n\n**Assessment:**\nThe patient's elevated resting heart rate is concerning and warrants further investigation. The incomplete clinical assessment, including the unknown FBS level and lack of medical history, makes it challenging to determine the patient's actual risk profile. The predictive analytics results should be interpreted with caution and considered in the context of other clinical factors.\n\n**Plan:**\nFurther evaluation and testing are necessary to confirm the patient's risk profile. The following steps are recommended:\n1. Lipid profile testing to assess LDL, HDL, and triglyceride levels.\n2. Fasting glucose testing to determine the patient's actual FBS level.\n3. Electrocardiogram (ECG) or stress testing to evaluate cardiac function.\n4. A thorough medical history and physical examination to assess the patient's overall health.\n5. Lifestyle counseling to promote a healthy diet, regular exercise, and stress management.\nSchedule a follow-up appointment to review the patient's test results, complete a thorough medical history and physical examination, and provide personalized recommendations for risk reduction and disease prevention. Regular monitoring and lifestyle modifications may be necessary to mitigate potential cardiovascular risks. No specific medication dosages are recommended at this time.\n\n**Explicit Approval:**\nThe final logic and corrections have been reviewed and approved. The patient's clinical assessment will be comprehensive, and further evaluation and testing will be necessary to determine the patient's actual risk profile."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: Neural Network. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (Neural Network): 0.4%\n- Computed Priority Score: 0.0/10\n\n---\n\n**Risk Level: Low**\n\n**SOAP Note**\n\n**Subjective:**\nThe patient is a 50-year-old male presenting with typical angina (Type 1) chest pain. The patient's symptoms and medical history were analyzed using an artificial neural network, which predicted a 0.4% probability of heart disease. This prediction, in conjunction with the patient's clinical characteristics, suggests a relatively healthy individual with no apparent significant risk factors for heart disease.\n\n**Objective:**\n- Age: 50\n- Sex: Male\n- Blood Pressure: 120 mmHg (noted as a single reading, with emphasis on the importance of monitoring for potential hypertension)\n- Cholesterol: 200 mg/dL (borderline high, with recommendation for monitoring and potential lifestyle adjustments)\n- Fasting Blood Sugar (FBS): Less than 120 mg/dL (specific value not available, indicating no diabetes)\n- Maximum Heart Rate Achieved: 150 bpm (context not fully specified, but considered in the context of age and potential fitness level)\n\n**Assessment:**\nBased on the patient's clinical characteristics and the neural network prediction, the risk level for heart disease is **Low**. The patient's resting blood pressure and cholesterol levels are within acceptable limits, although the cholesterol level is at the borderline high range. The fasting blood sugar level indicates no diabetes. The maximum heart rate achieved, while not fully contextualized, does not alone indicate a heightened risk of heart disease in this scenario.\n\n**Plan:**\n1. **Routine Check-ups**: Schedule regular health check-ups to monitor blood pressure, cholesterol levels, and fasting blood sugar.\n2. **Healthy Lifestyle**: Encourage and support the maintenance of a healthy lifestyle, including a balanced diet and regular exercise, to mitigate potential risk factors for heart disease.\n3. **Further Evaluation**: Consider further testing or evaluation if symptoms persist or worsen, to ensure comprehensive monitoring of the patient's health status.\n4. **Comprehensive Healthcare Evaluation**: Emphasize the need for a comprehensive evaluation by a qualified healthcare professional to determine the patient's overall health and risk profile, as this preliminary assessment is based on limited data and should not be considered a definitive diagnosis.\n\n**Disclaimer:**\nThis assessment is preliminary and based on the data provided. A comprehensive evaluation by a qualified healthcare professional is necessary to determine the patient's overall health and risk profile. This SOAP note is intended for informational purposes and should be used in conjunction with clinical judgment and comprehensive patient evaluation."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Local Expert System (0 Tokens) (None). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and the XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\n**LOW RISK FOR HEART DISEASE**\n\n**SOAP Note:**\n\n**Subjective:**\nThe patient, a 50-year-old male, presents with typical angina. However, there is a lack of comprehensive clinical notes and additional diagnostic information that might limit the accuracy of this assessment. The patient's lifestyle factors, including diet, exercise, and stress management, are not explicitly documented but are crucial for a thorough evaluation.\n\n**Objective:**\n- Age: 50\n- Sex: Male\n- Chest Pain: Typical angina\n- Resting Blood Pressure (trestbps): 120 mmHg, which is within normal limits but on the higher end\n- Cholesterol (chol): 200 mg/dL, considered borderline high according to the American Heart Association guidelines\n- Fasting Blood Sugar (fbs): Less than 120 mg/dL, but the exact value is not provided\n- Maximum Heart Rate Achieved (thalach): 150 beats per minute, within normal limits for age and physical condition\n- Predictive Analytics: The XGBoost model predicts a 2.7% probability of heart disease, corresponding to a Priority Score of 0.3/10\n\n**Assessment:**\nBased on the provided data and predictive analytics, the patient is assessed to be at **LOW RISK** for heart disease. However, it is essential to consider that this assessment may be limited by the absence of comprehensive clinical notes and additional diagnostic information. The borderline high cholesterol level and the importance of considering this value in the context of other cardiovascular risk factors are noted. The lack of specific fasting blood glucose level and other relevant lifestyle factors, such as family history, smoking status, and physical activity, necessitates further evaluation.\n\n**Plan:**\n1. **Further Evaluation:** Conduct a detailed clinical evaluation, including a thorough medical history (focusing on family history of heart disease), physical examination, and possibly additional diagnostic tests (e.g., electrocardiogram, echocardiogram, stress test) to better assess the patient's cardiovascular health.\n2. **Lifestyle Counseling:** Provide guidance on maintaining a healthy lifestyle, including diet (focusing on cholesterol reduction and heart-healthy foods), exercise (aiming for at least 150 minutes of moderate-intensity aerobic activity or 75 minutes of vigorous-intensity aerobic activity or a combination of both, per week), and stress management (such as meditation, yoga, or deep breathing exercises) to reduce the risk of developing heart disease in the future.\n3. **Monitoring:** Schedule follow-up appointments to monitor the patient's condition, adjust the management plan as necessary, and ensure that the patient's fasting blood glucose level, blood pressure, and cholesterol levels are regularly assessed and managed according to established guidelines.\n\nThis assessment and plan are based on the provided data and should be revised as more information becomes available. A comprehensive clinical evaluation by a healthcare professional is essential for validating this assessment and ensuring the patient receives appropriate care."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 5.7%\n- Computed Priority Score: 0.6/10\n\n---\n\n**LOW RISK**\n**SOAP Note**\n\n**Subjective:**\nThe patient, a 50-year-old male, presents with typical angina (characterized by chest pain or discomfort that occurs with exertion or stress and is relieved by rest), which is a symptom suggestive of underlying myocardial ischemia. The patient's symptoms and medical history, including the lack of fasting blood sugar issues (with a noted value that requires clarification for accuracy), indicate a need for careful evaluation and management to assess and mitigate the risk of coronary artery disease.\n\n**Objective:**\nKey vitals and health indicators include:\n- Age: 50\n- Sex: Male\n- Resting Blood Pressure: 120 mmHg, which is within a relatively normal range (normal blood pressure is typically defined as less than 120/80 mmHg)\n- Cholesterol: 200 mg/dL, at the lower end of the borderline high range\n- Fasting Blood Sugar: Value reported as 0, which is not biologically plausible and requires clarification (normal levels are usually below 100 mg/dL)\n- Maximum Heart Rate Achieved: 150 beats per minute during exercise, which is not unusually high but should be considered in the context of other risk factors and symptoms\n- Predicted Probability of Heart Disease: 5.7% based on the XGBoost model, corresponding to a Priority Score of 0.6 out of 10\n\n**Assessment:**\nBased on the provided patient data and considering the presence of typical angina, the patient's risk level for heart disease is classified as **LOW**. This assessment is supported by the relatively normal resting blood pressure, the absence of fasting blood sugar issues (pending clarification of the reported value), and the predicted probability of heart disease. However, the presence of typical angina and the borderline high cholesterol level necessitate close monitoring and a comprehensive risk assessment, including family history, lifestyle, and other comorbid conditions.\n\n**Plan:**\nTo manage the patient's condition effectively and mitigate the risk of heart disease, the following steps are recommended:\n1. **Monitoring and Follow-Up:** Schedule regular follow-up appointments to monitor the patient's condition closely, including blood pressure, cholesterol levels, and symptoms of angina.\n2. **Lifestyle Modifications:** Encourage the patient to adopt a healthy lifestyle, including a balanced diet, regular physical activity, stress management, and avoidance of smoking.\n3. **Further Testing:** Consider conducting further diagnostic tests, such as a stress test or echocardiogram, to evaluate the patient's cardiac function and assess the need for any interventions.\n4. **Comprehensive Clinical Evaluation:** Perform a detailed medical history (including family history of heart disease), physical examination, and possibly additional diagnostic tests to guide management decisions accurately and refine the risk assessment.\n5. **Risk Factor Modification:** Address modifiable risk factors, such as cholesterol levels and blood pressure, through lifestyle modifications and, if necessary, pharmacological interventions, to reduce the overall risk of heart disease.\n\nBy following this plan, the patient's risk factors will be closely monitored, and appropriate interventions will be implemented to mitigate the risk of heart disease, ensuring the best possible outcomes for the patient."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Local Expert System (0 Tokens) (None). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and the XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\n**Low Risk**\n**SOAP Note**\n\n**Subjective:**\nThe patient is a 50-year-old male presenting with typical angina. The patient's subjective report includes chest pain, but no additional clinical notes are provided. It is essential to consider factors such as family history, lifestyle, and additional diagnostic tests to further evaluate the patient's risk.\n\n**Objective:**\nThe patient's vital signs and medical history include:\n- Age: 50\n- Sex: Male\n- Chest Pain (cp): Typical angina (cp = 1)\n- Resting Blood Pressure (trestbps): 120 mmHg\n- Cholesterol (chol): 200 mg/dL\n- Fasting Blood Sugar (fbs): 0 (less than 120 mg/dL)\n- Maximum Heart Rate Achieved (thalach): 150 bpm\nThe patient's predicted probability of heart disease is 2.7% based on the XGBoost prediction model, corresponding to a Priority Score of 0.3/10.\n\n**Assessment:**\nBased on the provided vitals and prediction model, the patient is assessed to be at **Low Risk** for heart disease. However, this assessment is preliminary and may change with additional information or diagnostic findings. It is crucial to consider the patient's overall health, medical history, and lifestyle when evaluating their risk. The patient's blood pressure is within normal limits, and the maximum heart rate achieved is not considered critical. Nevertheless, a comprehensive evaluation by a healthcare professional is necessary to determine the best course of action for this patient.\n\n**Plan:**\n1. **Lifestyle Modifications:** Encourage a healthy diet, regular physical activity, stress management, and smoking cessation (if applicable) to maintain cardiovascular health.\n2. **Regular Check-ups:** Schedule follow-up appointments to monitor blood pressure, cholesterol levels, and fasting blood sugar.\n3. **Additional Testing:** Consider conducting further diagnostic tests, such as an electrocardiogram (ECG) or a stress test, to gather more information about the patient's heart health.\n4. **Continuous Monitoring:** Regularly monitor the patient to assess their response to lifestyle modifications and for the development of any new symptoms or worsening of existing conditions.\n5. **Comprehensive Evaluation:** A comprehensive evaluation by a healthcare professional is necessary to determine the best course of action for this patient, considering all aspects of their health and medical history.\n\n**Approval Statement:**\nThis SOAP note is approved with the understanding that it is based on limited data and should be reviewed and updated as more information becomes available. The patient's care should be guided by a thorough evaluation of their medical history, lifestyle, and diagnostic findings, and any treatment plan should be developed under the supervision of a qualified healthcare professional, adhering to the most current and evidence-based medical guidelines."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Local Expert System (0 Tokens) (None). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and the XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Local Expert System (0 Tokens) (None). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and the XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Local Expert System (0 Tokens) (None). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Expert System Clinical Assessment:**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n- Risk Level: **Normal**\n\n*Note: This decision was made using deterministic clinical rules and the XGBoost probability, without LLM synthesis.*"
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Google LLM (Gemini) (gemini-2.5-flash). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Google LLM - gemini-2.5-flash):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\n**Risk Level: Normal**\n\n---\n\n**S (Subjective):**\nPatient presents with a history of atypical angina (chest pain type 1). No other specific subjective complaints or history of present illness are detailed for this evaluation.\n\n**O (Objective):**\n*   **Vitals:**\n    *   Age: 50 years\n    *   Sex: Male (encoded as 1)\n    *   Chest Pain Type (cp): 1 (Atypical Angina)\n    *   Resting Blood Pressure (trestbps): 120 mmHg\n    *   Cholesterol (chol): 200 mg/dL\n    *   Fasting Blood Sugar (fbs): 0 (indicating <120 mg/dL)\n    *   Maximum Heart Rate Achieved (thalach): 150 bpm\n*   **ML Model Output (XGBoost):**\n    *   Disease Probability: 2.7%\n*   **Expert System Output:**\n    *   Computed Priority Score: 0.3/10\n\n**A (Assessment):**\nThe patient demonstrates stable vital signs. Resting blood pressure (120 mmHg) is within the normal range, and maximum heart rate (150 bpm) is well within a healthy physiological range for a 50-year-old. Fasting blood sugar is normal. While cholesterol (200 mg/dL) is noted as borderline, it does not represent an acutely critical value. Atypical angina is present, but in the context of otherwise stable objective parameters, it does not immediately elevate the patient to a critical status.\n\nThe XGBoost predictive model indicates a very low disease probability of 2.7%, which correlates with a Computed Priority Score of 0.3/10. This robust assessment is fully supported by the patient's stable vital signs and the low output from the predictive model. Critically, no vitals approach predefined critical thresholds (e.g., BP > 180 mmHg or heart rate > 200 bpm). This evaluation is fully consistent with prior assessments for identical patient data, ensuring logical and clinical continuity. Based on these combined factors, the patient is classified at a **Normal** risk level for the assessed condition.\n\n**P (Plan):**\nGiven the normal risk level and stable objective findings, no immediate critical intervention is indicated. Routine follow-up and monitoring as per standard clinical guidelines are recommended. The patient should be advised to continue standard health maintenance practices and to report any new or worsening symptoms for re-evaluation. No specific medication dosages are recommended by this assessment."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\n**Risk Level: Normal**\n\n**SOAP Note:**\n\n**S (Subjective):**\nThe patient is a 50-year-old male, presenting with atypical angina (chest pain type 1). No other specific subjective complaints or history of present illness are detailed for this evaluation.\n\n**O (Objective):**\n*   **Vital Signs:**\n    *   Age: 50 years\n    *   Sex: Male (encoded as 1)\n    *   Chest Pain Type (cp): 1 (Atypical Angina)\n    *   Resting Blood Pressure (trestbps): 120 mmHg\n    *   Cholesterol (chol): 200 mg/dL\n    *   Fasting Blood Sugar (fbs): 0 (indicating <120 mg/dL)\n    *   Maximum Heart Rate Achieved (thalach): 150 bpm\n*   **ML Model Output (XGBoost):**\n    *   Disease Probability: 2.7%\n*   **Computed Priority Score:** 0.3/10\n\n**A (Assessment):**\nThe patient's vital signs are stable, with a resting blood pressure of 120 mmHg and a maximum heart rate of 150 bpm, both of which are below the critical thresholds (> 180 mmHg and > 200 bpm, respectively). The fasting blood sugar is normal. Although the cholesterol level is 200 mg/dL, which is considered borderline, it does not immediately indicate a critical status. The presence of atypical angina, in conjunction with otherwise stable vital signs, does not elevate the patient to a high-risk category.\n\nThe XGBoost model predicts a low disease probability of 2.7%, which aligns with the Computed Priority Score of 0.3/10. This suggests a low risk for heart disease based on the provided patient data.\n\n**P (Plan):**\nGiven the stable vital signs and the low disease probability predicted by the XGBoost model, the patient is classified as being at a **Normal** risk level for heart disease. Routine follow-up and monitoring, along with standard health maintenance practices, are recommended. The patient should be advised to report any new or worsening symptoms for re-evaluation and scheduled for a follow-up appointment within 3-6 months to reassess their condition and adjust the management plan as necessary. Emphasis should be placed on monitoring and addressing the borderline cholesterol level through standard health maintenance practices. No specific medication dosages are recommended at this time."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\n**Risk Level: Normal**\n\n**SOAP Note:**\n\n**S (Subjective):**\nThe patient is a 50-year-old male presenting with atypical angina (chest pain type 1). There are no additional subjective complaints or detailed history of present illness provided.\n\n**O (Objective):**\n*   **Vital Signs:**\n    *   Age: 50 years\n    *   Sex: Male (encoded as 1)\n    *   Chest Pain Type (cp): 1 (Atypical Angina)\n    *   Resting Blood Pressure (trestbps): 120 mmHg, which is within the normal range. For context, critical blood pressure thresholds are considered to be above 180 mmHg.\n    *   Cholesterol (chol): 200 mg/dL, considered borderline but not immediately critical.\n    *   Fasting Blood Sugar (fbs): 0, indicating normal fasting blood sugar levels.\n    *   Maximum Heart Rate Achieved (thalach): 150 bpm, within a healthy physiological range for the patient's age. Critical heart rate thresholds are considered to be above 200 bpm for this age group.\n*   **ML Model Output (XGBoost):**\n    *   Disease Probability: 2.7%\n*   **Computed Priority Score:** 0.3/10\n\n**A (Assessment):**\nThe patient's vital signs are stable, with a resting blood pressure of 120 mmHg and a maximum heart rate of 150 bpm, both of which are below the critical thresholds of 180 mmHg and 200 bpm, respectively. The fasting blood sugar is normal, and although the cholesterol level is 200 mg/dL, which is borderline, it does not immediately indicate a critical status. The presence of atypical angina, combined with the stable vital signs, does not elevate the patient to a high-risk category.\n\nThe XGBoost model predicts a low disease probability of 2.7%, consistent with the Computed Priority Score of 0.3/10. This suggests a low risk for heart disease based on the provided patient data.\n\n**P (Plan):**\nGiven the stable vital signs and low disease probability, the patient is classified as being at a **Normal** risk level for heart disease. Routine follow-up and monitoring, along with standard health maintenance practices, are recommended. It is particularly important to monitor and address the borderline cholesterol level through standard health maintenance practices, including dietary adjustments, regular exercise, and potential future medicinal intervention if necessary. The patient should be advised to report any new or worsening symptoms for re-evaluation. No specific medication dosages are recommended at this time, but the patient's condition will be closely monitored for any changes that may necessitate pharmacological intervention in the future.\n\nThis plan is in line with standard medical guidelines for a patient with this profile, emphasizing preventive care and early detection of any potential issues. The patient is scheduled for a follow-up appointment within 3-6 months to reassess their condition and adjust the management plan as necessary."
+        },
+        {
+            "role": "user",
+            "content": "Evaluated patient with vitals: {'age': 50, 'sex': 1, 'cp': 1, 'trestbps': 120, 'chol': 200, 'fbs': 0, 'thalach': 150}. ML Model: XGBoost. Engine: Groq (llama-3.3-70b-versatile). Notes: "
+        },
+        {
+            "role": "assistant",
+            "content": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 2.7%\n- Computed Priority Score: 0.3/10\n\n---\n\n**Risk Level: Normal**\n\n**SOAP Note:**\n\n**S (Subjective):**\nThe patient is a 50-year-old male, presenting with atypical angina (chest pain type 1), as indicated by the 'cp' value of 1. There are no additional subjective complaints or detailed history of present illness provided.\n\n**O (Objective):**\n*   **Vital Signs:**\n    *   Age: 50 years\n    *   Sex: Male (encoded as 1)\n    *   Chest Pain Type (cp): 1 (Atypical Angina)\n    *   Resting Blood Pressure (trestbps): 120 mmHg, which is within the normal range. For context, critical blood pressure thresholds are considered to be above 180 mmHg.\n    *   Cholesterol (chol): 200 mg/dL, considered borderline but not immediately critical.\n    *   Fasting Blood Sugar (fbs): 0, indicating normal fasting blood sugar levels.\n    *   Maximum Heart Rate Achieved (thalach): 150 bpm, within a healthy physiological range for the patient's age. Critical heart rate thresholds are considered to be above 200 bpm for this age group.\n*   **ML Model Output (XGBoost):**\n    *   Disease Probability: 2.7%\n*   **Computed Priority Score:** 0.3/10\n\n**A (Assessment):**\nThe patient's vital signs are stable, with a resting blood pressure of 120 mmHg and a maximum heart rate of 150 bpm, both of which are below the critical thresholds of 180 mmHg and 200 bpm, respectively. The fasting blood sugar is normal, and although the cholesterol level is 200 mg/dL, which is borderline, it does not immediately indicate a critical status. The presence of atypical angina, combined with the stable vital signs, does not elevate the patient to a high-risk category.\n\nThe XGBoost model predicts a low disease probability of 2.7%, consistent with the Computed Priority Score of 0.3/10. This suggests a low risk for heart disease based on the provided patient data.\n\n**P (Plan):**\nGiven the stable vital signs and low disease probability, the patient is classified as being at a **Normal** risk level for heart disease. Routine follow-up and monitoring, along with standard health maintenance practices, are recommended. The patient should be advised to report any new or worsening symptoms for re-evaluation, particularly those that could indicate a need for immediate medical attention, such as severe chest pain or shortness of breath. The patient is scheduled for a follow-up appointment within 3-6 months to reassess their condition and adjust the management plan as necessary. Emphasis should be placed on monitoring and addressing the borderline cholesterol level through standard health maintenance practices, including dietary adjustments, regular exercise, and potential future medicinal intervention if necessary. No specific medication dosages are recommended at this time. Patient education will include information on recognizing symptoms that should prompt immediate medical evaluation, ensuring the patient is well-informed and proactive in their health management."
+        }
+    ]
+}
