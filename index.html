@@ -629,29 +629,29 @@
         <pre class="mermaid">
 %%{init: {'themeVariables': { 'fontSize': '20px', 'fontFamily': 'sans-serif'}}}%%
 flowchart TD
-    A[Nurse Intake Form] --> B[Streamlit Frontend]
-    B --> C[Flask Backend API]
-    C --> D[XGBoost Cardiac Risk Model]
-    C --> E[ESI-Style Acuity Engine]
-    E --> F[Red-Flag Safety Rules]
-    E --> G[Likely Resource Prediction]
-    D --> H[Generated Output Panel]
+    A[Nurse Intake<br/>Form] --> B[Streamlit<br/>Frontend]
+    B --> C[Flask Backend<br/>API]
+    C --> D[XGBoost Cardiac<br/>Risk Model]
+    C --> E[ESI-Style<br/>Acuity Engine]
+    E --> F[Red-Flag<br/>Safety Rules]
+    E --> G[Likely Resource<br/>Prediction]
+    D --> H[Generated<br/>Output Panel]
     F --> H
     G --> H
-    H --> I[Live Waiting-Room Queue]
-    I --> J[Queue Timing / Breach Status]
-    I --> K[Nurse Override]
-    K --> L[Persistent Audit Trail]
-    I --> M[Reassessment Engine]
+    H --> I[Live Waiting-Room<br/>Queue]
+    I --> J[Queue Timing /<br/>Breach Status]
+    I --> K[Nurse<br/>Override]
+    K --> L[Persistent<br/>Audit Trail]
+    I --> M[Reassessment<br/>Engine]
     M --> E
     M --> L
-    H --> N[Safety Sentinel Agent]
-    I --> O[Flow Coordinator Agent]
-    H --> P[Documentation Agent]
+    H --> N[Safety Sentinel<br/>Agent]
+    I --> O[Flow Coordinator<br/>Agent]
+    H --> P[Documentation<br/>Agent]
     
     subgraph RAG System
-        AI[LLM RAG and AI Committee]
-        RAG[(ChromaDB Guidelines)]
+        AI[LLM RAG and<br/>AI Committee]
+        RAG[(ChromaDB<br/>Guidelines)]
     end
     
     C --> AI
