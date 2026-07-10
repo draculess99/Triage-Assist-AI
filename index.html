@@ -52,6 +52,11 @@
       width: min(1120px, 92%);
       margin: 0 auto;
     }
+    
+    .container-wide {
+      width: min(1400px, 98%);
+      margin: 0 auto;
+    }
 
     header {
       position: sticky;
@@ -435,12 +440,10 @@
       border-radius: 20px;
       padding: 22px;
       box-shadow: var(--shadow);
-      display: flex;
-      justify-content: center;
+      text-align: center;
     }
 
     .mermaid-box svg {
-      width: 100% !important;
       max-width: 100% !important;
       height: auto !important;
     }
@@ -735,7 +738,7 @@
       </div>
     </section>
 
-    <section id="architecture" class="container">
+    <section id="architecture" class="container-wide">
       <div class="section-title">
         <h2>Architecture and data flow</h2>
         <p>A Streamlit interface talks to a Flask backend, model artifacts, deterministic ESI logic, queue persistence,
