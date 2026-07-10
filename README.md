@@ -238,8 +238,8 @@ flowchart TD
     F --> G[Flow Coordinator Agent]
     G --> H[Documentation Agent]
     
-    subgraph LLM RAG and AI Committee
-        AI[Optional LLM AI Committee]
+    subgraph RAG System
+        AI[LLM RAG and AI Committee]
         RAG[(ChromaDB Guidelines)]
     end
     
