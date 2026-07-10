@@ -1,6 +1,4 @@
 import os
-import chromadb
-from chromadb.utils import embedding_functions
 
 # Set up paths
 ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -8,18 +6,22 @@ DATA_DIR = os.path.join(ROOT_DIR, 'data')
 GUIDELINES_DIR = os.path.join(DATA_DIR, 'guidelines')
 CHROMA_DB_DIR = os.path.join(DATA_DIR, 'chromadb')
 
-# Initialize ChromaDB Client
-# Persistent client saves the database to disk
-client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
-
-# Use the default SentenceTransformers embedding function
-sentence_transformer_ef = embedding_functions.DefaultEmbeddingFunction()
-
-# Create or get the collection
-collection = client.get_or_create_collection(
-    name="ed_guidelines",
-    embedding_function=sentence_transformer_ef
-)
+def get_chroma_collection():
+    import chromadb
+    from chromadb.utils import embedding_functions
+    # Initialize ChromaDB Client
+    # Persistent client saves the database to disk
+    client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
+    
+    # Use the default SentenceTransformers embedding function
+    sentence_transformer_ef = embedding_functions.DefaultEmbeddingFunction()
+    
+    # Create or get the collection
+    collection = client.get_or_create_collection(
+        name="ed_guidelines",
+        embedding_function=sentence_transformer_ef
+    )
+    return collection
 
 def initialize_knowledge_base():
     """Reads all guidelines text files, chunks them by paragraph, and stores them in ChromaDB."""
@@ -27,13 +29,17 @@ def initialize_knowledge_base():
         print(f"Guidelines directory not found at {GUIDELINES_DIR}")
         return
 
+    import chromadb
+    from chromadb.utils import embedding_functions
+    client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
+
     # Delete existing collection to refresh it with new files
     try:
         client.delete_collection("ed_guidelines")
     except ValueError:
         pass
         
-    global collection
+    sentence_transformer_ef = embedding_functions.DefaultEmbeddingFunction()
     collection = client.get_or_create_collection(
         name="ed_guidelines",
         embedding_function=sentence_transformer_ef
@@ -82,9 +88,12 @@ def initialize_knowledge_base():
 
 def retrieve_guidelines(query: str, n_results: int = 2):
     """Retrieves the most relevant clinical guidelines for the given query."""
+    collection = get_chroma_collection()
+    
     if collection.count() == 0:
         # Failsafe: if the database is empty, try to initialize it first
         initialize_knowledge_base()
+        collection = get_chroma_collection()
         
     if collection.count() == 0:
         return ""
@@ -104,6 +113,3 @@ def retrieve_guidelines(query: str, n_results: int = 2):
         formatted_guidelines += f"[{i+1}] {text}\n\n"
         
     return formatted_guidelines
-
-# Run initialization when module is imported
-initialize_knowledge_base()
