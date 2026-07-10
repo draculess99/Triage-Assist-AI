@@ -222,9 +222,13 @@ flowchart TD
     F --> G[Flow Coordinator Agent]
     G --> H[Documentation Agent]
     
-    subscript_rag[RAG & Committee]
-    H --> AI[Optional LLM AI Committee]
-    AI -->|Semantic Search| RAG[(ChromaDB Guidelines)]
+    subgraph LLM RAG and AI Committee
+        AI[Optional LLM AI Committee]
+        RAG[(ChromaDB Guidelines)]
+    end
+    
+    H --> AI
+    AI -->|Semantic Search| RAG
     RAG -.->|Citations| AI
     
     AI --> I[Generated Output Panel]
@@ -247,6 +251,8 @@ sequenceDiagram
     participant API as Flask API
     participant ML as ML Model
     participant ESI as ESI Engine
+    participant RAG as RAG/ChromaDB
+    participant AI as AI Committee
     participant Queue as Live Queue
     participant Audit as Audit Trail
 
@@ -255,6 +261,12 @@ sequenceDiagram
     API->>ML: Predict cardiac risk
     API->>ESI: Calculate ESI acuity
     ESI-->>API: ESI level, red flags, resources
+    opt If LLM enabled
+        API->>RAG: Semantic search protocols
+        RAG-->>API: Clinical guidelines
+        API->>AI: Generate SOAP note & debate
+        AI-->>API: LLM evaluation with citations
+    end
     API-->>UI: Assessment result
     UI->>Queue: Add patient to queue
     UI->>Audit: Log evaluation event
@@ -511,39 +523,9 @@ Potential next steps:
 
 ---
 
-## GitHub hygiene
+## Summary
 
-Before committing, make sure these are ignored:
-
-```gitignore
-.env
-venv/
-__pycache__/
-*.pyc
-data/patient_queue.json
-data/audit_trail.jsonl
-data/transactions.log
-data/memory.json
-data/debug.txt
-test_*.py
-*_test.py
-check_*.py
-temp_test.py
-```
-
-If any of those files were already tracked, remove them from Git tracking without deleting your local copy:
-
-```bash
-git rm --cached .env
-git rm -r --cached venv
-git rm --cached data/patient_queue.json data/audit_trail.jsonl data/transactions.log data/memory.json
-```
-
----
-
-## Portfolio positioning
-
-A good portfolio description:
+Description:
 
 > Triage Assist AI is an emergency-department triage command-center prototype that combines deterministic ESI-style acuity scoring, machine-learning cardiac-risk prediction, red-flag safety rules, nurse override, persistent audit trail, live queue management, reassessment/deterioration monitoring, and visible command agents for safety, flow coordination, and documentation.
 
