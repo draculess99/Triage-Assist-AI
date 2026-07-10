@@ -152,7 +152,16 @@ Reassessment does **not** create a new patient ID. It updates the existing patie
 
 ---
 
-### 6. Persistent audit trail
+### 6. Resource prediction & Explainable AI (XAI)
+
+As outlined in the feature implementation strategy, commercial-grade tools need to explain their reasoning and predict hospital impact:
+- **Resource Prediction:** The engine estimates likely ED resources (e.g., ECG, troponin, chest X-ray) and fast-track eligibility based on the patient's presentation.
+- **Per-Patient Explanation:** The XAI tab breaks down exactly *why* a specific acuity was chosen (e.g., highlighting specific abnormal vitals or age risk factors), rather than just showing global model feature importance.
+- **Fairness Metrics:** Tracks model safety, precision, and recall to ensure equitable triage.
+
+---
+
+### 7. Persistent audit trail
 
 Workflow events are saved to a persistent audit log.
 
@@ -174,7 +183,15 @@ This supports the clinical pattern:
 
 ---
 
-### 7. Visible command agents
+### 8. RAG (Retrieval-Augmented Generation) & System Memory
+
+The application features advanced AI capabilities to ground decisions and remember past context:
+- **RAG Knowledge Base:** An embedded ChromaDB vector store ingests `.txt` clinical guidelines from `data/guidelines/`. The optional AI Committee dynamically searches this knowledge base, retrieving and explicitly citing hospital protocols in their evaluations to reduce hallucinations.
+- **System Memory:** Historical patient evaluations are stored in `data/memory.json`, allowing the system to reference prior encounters and maintain context across sessions.
+
+---
+
+### 9. Visible command agents
 
 The app includes three visible command-center agents. They do **not** replace the deterministic ESI engine or the nurse-final decision.
 
@@ -204,7 +221,14 @@ flowchart TD
     E --> F[Safety Sentinel Agent]
     F --> G[Flow Coordinator Agent]
     G --> H[Documentation Agent]
-    H --> I[Generated Output Panel]
+    
+    subscript_rag[RAG & Committee]
+    H --> AI[Optional LLM AI Committee]
+    AI -->|Semantic Search| RAG[(ChromaDB Guidelines)]
+    RAG -.->|Citations| AI
+    
+    AI --> I[Generated Output Panel]
+    H --> I
     I --> J[Nurse Confirmation / Override]
     J --> K[Persistent Live Queue]
     J --> L[Persistent Audit Trail]
@@ -242,6 +266,17 @@ sequenceDiagram
     UI->>Queue: Update same patient record
     UI->>Audit: Log reassessment
 ```
+
+---
+
+## Data sources
+
+The machine-learning cardiac-risk layer trains on either real or synthetic datasets. The application supports toggling between four different dataset configurations:
+
+1. **UCI Cleveland Original:** The classic [UCI Heart Disease dataset](https://archive.ics.uci.edu/ml/datasets/heart+Disease) downloaded automatically on startup.
+2. **Synthetic Global Cohort (10k):** A generated dataset representing a standard distribution of 10,000 patients.
+3. **High-Risk Elderly Cohort (2k):** A generated dataset specifically skewed toward patients over 60 with a high incidence of cardiac disease.
+4. **Global General Population (50k):** A massive generated dataset representing a low-prevalence general population to demonstrate under-triage behavior and class imbalance.
 
 ---
 
