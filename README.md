@@ -59,6 +59,13 @@ The engine considers:
 - red-flag symptoms
 - cardiac ML probability, only when cardiac context is confirmed
 
+**Automatic red-flag protocol detection:**
+- **Possible Stroke:** face droop, arm weakness, speech issue, onset time
+- **Possible Sepsis:** fever/hypothermia, HR, RR, BP, altered mental status
+- **Possible MI:** chest pain, age, diaphoresis, shortness of breath
+- **Possible Respiratory Failure:** low SpO₂, high RR, distress
+- **Possible Trauma Activation:** mechanism + hypotension + anticoagulant use
+
 ---
 
 ### 2. Chest-pain guardrail
@@ -103,6 +110,13 @@ The waiting-room board is sorted by:
 
 Lower ESI numbers are more critical, so ESI-1 and ESI-2 patients rise to the top.
 
+**Example Command Board:**
+| Wait | Patient | Complaint | ESI | Risk | Status | Next Action |
+|---|---|---|---|---|---|---|
+| 03 min | P001 | Chest pain | 2 | High | Needs bed | ECG + provider now |
+| 18 min | P002 | Ankle injury | 4 | Low | Waiting | Fast track |
+| 42 min | P003 | Fever/SOB | 2 | High | Deteriorating | Sepsis screen |
+
 ---
 
 ### 4. Nurse confirmation and override
@@ -117,7 +131,7 @@ The app supports:
 
 If the AI recommends **ESI-1 or ESI-2** and the nurse downgrades to **ESI-4 or ESI-5**, the app requires a clinical reason before saving.
 
-This is recorded in the audit trail as a high-risk downgrade event.
+This is recorded in the audit trail as a high-risk downgrade event. This workflow loop turns the app from "AI gives answer" into "AI supports clinical workflow," which is significantly more credible.
 
 ---
 
@@ -140,13 +154,9 @@ It then recalculates ESI and updates the same patient record.
 
 Example:
 
-```text
-P-007 reassessment:
-Pain improved from 8/10 to 0/10
-Old ESI: ESI-2
-New ESI: ESI-4
-Status: Reassessed — improved/lower acuity
-```
+> **Patient P004** has waited 38 minutes. HR increased from 112 to 128. SpO₂ dropped from 95% to 91%. Recommend re-triage and escalation.
+
+This moves the application from static one-time triage to real-time ED surveillance.
 
 Reassessment does **not** create a new patient ID. It updates the existing patient in the queue.
 
@@ -155,9 +165,15 @@ Reassessment does **not** create a new patient ID. It updates the existing patie
 ### 6. Resource prediction & Explainable AI (XAI)
 
 As outlined in the feature implementation strategy, commercial-grade tools need to explain their reasoning and predict hospital impact:
-- **Resource Prediction:** The engine estimates likely ED resources (e.g., ECG, troponin, chest X-ray) and fast-track eligibility based on the patient's presentation.
-- **Per-Patient Explanation:** The XAI tab breaks down exactly *why* a specific acuity was chosen (e.g., highlighting specific abnormal vitals or age risk factors), rather than just showing global model feature importance.
-- **Fairness Metrics:** Tracks model safety, precision, and recall to ensure equitable triage.
+- **Resource Prediction:** The engine estimates likely ED resources (e.g., ECG, troponin, CBC, CMP, chest X-ray), likely disposition (e.g., observation/admission risk 62%), and fast-track eligibility based on the patient's presentation.
+- **Per-Patient Explanation:** The XAI tab breaks down exactly *why* a specific acuity was chosen. For example:
+  > **Why ESI-2?**
+  > - Chest pain with high-risk features
+  > - Systolic BP 185
+  > - Age 72
+  > - Likely requires multiple ED resources
+  > - Not safe for fast track
+- **Fairness Metrics:** Tracks model safety, precision, and bias/fairness breakdown on synthetic groups to ensure equitable triage. AHRQ specifically highlights equity and bias measurement as a core requirement of ED triage AI development.
 
 ---
 
