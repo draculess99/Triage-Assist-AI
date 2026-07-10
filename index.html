@@ -627,31 +627,41 @@
       </div>
       <div class="mermaid-box">
         <pre class="mermaid">
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '18px', 'fontFamily': 'sans-serif'}}}%%
 flowchart LR
-    A[Nurse Intake Form] --> B[Streamlit Frontend]
-    B --> C[Flask Backend API]
-    C --> D[XGBoost Cardiac Risk Model]
-    C --> E[ESI-Style Acuity Engine]
-    E --> F[Red-Flag Safety Rules]
-    E --> G[Likely Resource Prediction]
-    D --> H[Generated Output Panel]
+    classDef inputNode fill:#1e293b,stroke:#38bdf8,stroke-width:3px,color:#fff,padding:15px;
+    classDef appNode fill:#0f172a,stroke:#a78bfa,stroke-width:3px,color:#fff,padding:15px;
+    classDef engineNode fill:#111827,stroke:#22c55e,stroke-width:3px,color:#fff,padding:15px;
+    classDef agentNode fill:#172554,stroke:#fb7185,stroke-width:3px,color:#fff,padding:15px;
+    classDef dataNode fill:#334155,stroke:#facc15,stroke-width:3px,color:#fff,padding:15px;
+
+    A[Nurse Intake Form]:::inputNode --> B[Streamlit Frontend]:::appNode
+    B --> C[Flask Backend API]:::appNode
+    C --> D[XGBoost Cardiac Risk Model]:::engineNode
+    C --> E[ESI-Style Acuity Engine]:::engineNode
+    E --> F[Red-Flag Safety Rules]:::engineNode
+    E --> G[Likely Resource Prediction]:::engineNode
+    D --> H[Generated Output Panel]:::appNode
     F --> H
     G --> H
-    H --> I[Live Waiting-Room Queue]
-    I --> J[Queue Timing / Breach Status]
-    I --> K[Nurse Override]
-    K --> L[Persistent Audit Trail]
-    I --> M[Reassessment Engine]
+    H --> I[Live Waiting-Room Queue]:::dataNode
+    I --> J[Queue Timing / Breach Status]:::engineNode
+    I --> K[Nurse Override]:::inputNode
+    K --> L[Persistent Audit Trail]:::dataNode
+    I --> M[Reassessment Engine]:::engineNode
     M --> E
     M --> L
-    H --> N[Safety Sentinel Agent]
-    I --> O[Flow Coordinator Agent]
-    H --> P[Documentation Agent]
+    H --> N[Safety Sentinel Agent]:::agentNode
+    I --> O[Flow Coordinator Agent]:::agentNode
+    H --> P[Documentation Agent]:::agentNode
     
     subgraph RAG System
-        AI[LLM RAG and AI Committee]
-        RAG[(ChromaDB Guidelines)]
+        AI[LLM RAG and AI Committee]:::agentNode
+        RAG[(ChromaDB Guidelines)]:::dataNode
     end
+    
+    style RAG System fill:#1e293b,stroke:#94a3b8,stroke-width:2px,stroke-dasharray: 5 5;
+    
     C --> AI
     AI -->|Semantic Search| RAG
     RAG -.->|Citations| AI
