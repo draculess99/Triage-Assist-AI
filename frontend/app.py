@@ -1872,6 +1872,7 @@ with st.sidebar:
         ])
 
     st.markdown("---")
+    sidebar_spinner_placeholder = st.empty()
     st.subheader("Machine Learning")
     selected_model = st.selectbox("ML Model for Cardiac Risk", ["XGBoost", "Random Forest", "Logistic Regression"])
     st.caption("The ML model estimates cardiac disease probability. The ESI-style acuity engine then applies safety rules and workflow logic.")
@@ -1913,7 +1914,12 @@ with st.sidebar:
             st.rerun()
     st.caption("Refresh fetches latest data. Clear Queue empties the waiting room.")
 
+st.markdown("---")
+st.subheader("🏥 Live Waiting Room Queue")
+render_command_board(st.session_state.get('last_esi'), key_prefix="global_board", show_actions=True)
+st.markdown("---")
 
+st.warning("👉 **Select an operations workspace tab below to proceed:**")
 tab1, tab_cmd, tab_audit, tab2, tab3, tab4, tab5 = st.tabs([
     "📝 Patient Evaluation",
     "🚦 ESI Command Center",
@@ -1929,8 +1935,6 @@ with tab1:
 
     with col2:
         st.subheader("System Dashboard")
-        st.markdown("#### 🚑 Mini ED Board")
-        render_command_board(st.session_state.get('last_esi'), key_prefix="dashboard_board", show_actions=False)
 
         try:
             logs_resp = requests.get(f"{API_URL}/logs")
@@ -2127,6 +2131,23 @@ with tab1:
         pipeline_placeholder.markdown(_render_pipeline_html(-1), unsafe_allow_html=True)
 
         if evaluate_clicked:
+            sidebar_spinner_placeholder.markdown("""
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; padding: 15px; border-radius: 5px; background-color: rgba(59, 130, 246, 0.1); color: #3b82f6; font-weight: bold;">
+                    <div style="font-size: 32px; animation: hourglass-spin 2s ease-in-out infinite;">⏳</div>
+                    <span>System Busy...</span>
+                </div>
+                <style>
+                @keyframes hourglass-spin {
+                    0% { transform: rotate(0deg); }
+                    50% { transform: rotate(180deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                </style>
+            """, unsafe_allow_html=True)
+            
+            import time
+            time.sleep(0.1) # Force Streamlit to flush the UI update before the blocking request
+            
             vitals = {
                 "age": age,
                 "sex": sex,
@@ -2219,6 +2240,8 @@ with tab1:
             except Exception as e:
                 st.error(f"Could not reach backend: {e}")
                 pipeline_placeholder.markdown("<h5>🔴 Connection Error</h5>", unsafe_allow_html=True)
+                
+            sidebar_spinner_placeholder.empty()
 
         st.markdown("---")
         render_latest_evaluation_result_panel()
@@ -2233,8 +2256,6 @@ with tab_cmd:
         render_esi_card(st.session_state.get('last_esi'))
         render_override_panel(st.session_state.get('last_esi'), key_prefix="command_center_latest", patient_id=st.session_state.get("last_patient_id"))
     with c2:
-        st.subheader("Live Waiting-Room Queue")
-        render_command_board(st.session_state.get('last_esi'), key_prefix="command_center_board")
         st.markdown("### 🔁 Deterioration Watch")
         st.info("Implemented: click a patient row, open the reassessment expander, enter repeat vitals, and the app will compare old vs new values, recalculate ESI, update the queue, and write an audit event.")
         if st.session_state.get('last_override'):

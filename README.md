@@ -4,6 +4,54 @@ Triage Assist AI is a two-tier **Streamlit + Flask** clinical decision-support p
 
 > Educational prototype only. This is not a validated clinical device and must not be used to make real patient-care decisions.
 
+## Screenshots
+
+*(Please replace these placeholders with the actual screenshot images)*
+
+### Core Evaluation Workflow
+![Patient Intake Form](assets/intake_form.png)
+![Dashboard Overview](assets/dashboard_overview.png)
+![Deterministic ESI Output](assets/esi_acuity_output.png)
+![Sidebar Settings](assets/sidebar_settings.png)
+![Live Waiting Room Queue](assets/waiting_room_queue.png)
+
+### Agent Operations
+![AI Committee Debate](assets/ai_committee_debate.png)
+![RAG Citation Highlight](assets/rag_citation_zoom.png)
+![Command Center Agents](assets/command_center.png)
+
+### Data & Insights
+![Model Metrics Dashboard](assets/model_metrics.png)
+![Machine Learning Explainability](assets/ml_explainability.png)
+![Nurse Audit Trail](assets/audit_trail.png)
+
+## Architecture Overview
+
+```mermaid
+graph TD
+    UI[Streamlit Frontend] -->|REST API| Flask[Flask Backend]
+    Flask --> ESI[Deterministic ESI Engine]
+    Flask --> Forecaster[ML Cardiac Risk Model]
+    Flask --> Triage[AI Triage System]
+    
+    subscript_rag[RAG Integration]
+    Triage -->|Query| RAG[RAG Engine]
+    RAG -->|Semantic Search| Chroma[(ChromaDB)]
+    Chroma -.->|Returns Guidelines| RAG
+    RAG -.->|Context Injection| Triage
+    
+    subscript_llm[AI Committee]
+    Triage --> Analyst[Clinical Analyst Agent]
+    Triage --> Reviewer[Medical Reviewer Agent]
+    Triage --> Editor[Chief Editor Agent]
+    
+    Analyst -.->|Drafts Note| Reviewer
+    Reviewer -.->|Critiques| Editor
+    Editor -.->|Final SOAP| Flask
+    
+    Flask -->|JSON Response| UI
+```
+
 ## What is new in this version
 
 ### 🚦 ESI-Style Acuity / Priority Engine
@@ -41,6 +89,12 @@ This prevents a minor injury/laceration case from being incorrectly escalated as
 
 ### 🧠 ML + ESI Hybrid Logic
 The existing ML model still predicts cardiac disease probability, but the new acuity engine decides workflow priority. This means a patient can be escalated even when the ML model is uncertain, because deterministic safety rules override the probability score.
+
+### 📚 RAG Architecture (Retrieval-Augmented Generation)
+A brand new RAG engine has been implemented to ground the LLM's clinical decisions in real hospital protocols:
+- **Vector Database**: Uses a local embedded ChromaDB with `sentence-transformers`.
+- **Knowledge Base**: Automatically ingests `.txt` clinical guidelines from `data/guidelines/`.
+- **AI Committee Integration**: The Clinical Analyst and Medical Reviewer agents dynamically search the vector database based on the patient's chief complaint and vitals, retrieving the top most relevant guidelines and explicitly citing them in their evaluations.
 
 ### 📝 Updated Streamlit Intake Form
 The frontend now includes additional triage fields:
@@ -99,12 +153,15 @@ Triage-Assist-AI-main/
 │   ├── data_loader.py             # UCI / synthetic data loading
 │   ├── logger.py                  # Transaction logging
 │   ├── memory.py                  # JSON memory
+│   ├── rag_engine.py              # ChromaDB vector store and retrieval
 │   └── agents/
 │       ├── triage_system.py       # Evaluation pipeline + LLM committee
 │       └── command_agents.py      # Safety Sentinel + Documentation command agents
 ├── frontend/
 │   └── app.py                     # Streamlit UI
 ├── data/
+│   ├── guidelines/                # Folder for clinical .txt guidelines ingested by RAG
+│   ├── chromadb/                  # Local vector database storage
 │   ├── xgboost_model.json
 │   ├── lr_model.pkl
 │   ├── scaler.pkl
@@ -150,6 +207,15 @@ In the sidebar **Decision Engine** selector, the order is intentionally:
 3. **Google LLM (Gemini)**
 
 This keeps the safest zero-token path first, with Groq immediately available as the fast LLM option.
+
+## Future Work
+
+The current application is a highly functional prototype. Planned future enhancements, specifically regarding the new RAG implementation, include:
+
+1. **Document Upload UI**: Building a frontend interface that allows Hospital Administrators or Charge Nurses to drag-and-drop new PDF protocols directly into the RAG knowledge base without touching the backend folder.
+2. **Citation Hyperlinking**: Updating the Streamlit UI to display clickable citations in the AI Committee Debate that open the exact paragraph of the source document in a modal.
+3. **Multi-modal RAG**: Expanding the RAG engine to ingest and reference visual algorithms (like ACLS flowcharts) alongside text protocols.
+4. **Physician Preference Cards**: Extending the vector database to store individual physician preferences for specific complaints (e.g., "Dr. Smith prefers a CT scan for all RLQ pain").
 
 ### 3. Start locally
 
