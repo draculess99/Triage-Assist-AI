@@ -647,6 +647,15 @@ flowchart LR
     H --> N[Safety Sentinel Agent]
     I --> O[Flow Coordinator Agent]
     H --> P[Documentation Agent]
+    
+    subgraph RAG System
+        AI[LLM RAG and AI Committee]
+        RAG[(ChromaDB Guidelines)]
+    end
+    C --> AI
+    AI -->|Semantic Search| RAG
+    RAG -.->|Citations| AI
+    AI --> H
         </pre>
       </div>
     </section>
