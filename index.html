@@ -390,6 +390,12 @@
       overflow-x: auto;
       box-shadow: var(--shadow);
     }
+    
+    .mermaid-box svg {
+      transform: scale(1.15);
+      transform-origin: top center;
+      margin: 20px 0 60px 0;
+    }
 
     .stack {
       display: flex;
@@ -627,7 +633,7 @@
       </div>
       <div class="mermaid-box">
         <pre class="mermaid">
-%%{init: {'themeVariables': { 'fontSize': '20px', 'fontFamily': 'sans-serif'}}}%%
+%%{init: {'themeVariables': { 'fontFamily': 'sans-serif'}}}%%
 flowchart TD
     A[Nurse Intake<br/>Form] --> B[Streamlit<br/>Frontend]
     B --> C[Flask Backend<br/>API]
