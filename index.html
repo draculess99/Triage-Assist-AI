@@ -459,9 +459,27 @@
       padding: 40px 0;
     }
 
+    /* Mermaid label centering fix: keeps every word centered inside the node box. */
     .mermaid-box .nodeLabel,
+    .mermaid-box .nodeLabel p,
     .mermaid-box foreignObject div {
       text-align: center !important;
+      margin: 0 auto !important;
+      line-height: 1.25 !important;
+    }
+
+    .mermaid-box .m-node {
+      width: 155px;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0 auto;
+      padding: 6px 10px;
+      font-weight: 800;
+      line-height: 1.25;
+      white-space: normal;
     }
 
     .mermaid-box .cluster rect {
@@ -767,38 +785,44 @@
       </div>
       <div class="mermaid-box">
         <pre class="mermaid">
-%%{init: {'theme': 'dark'}}%%
+%%{init: {"theme": "dark", "securityLevel": "loose", "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 70, "rankSpacing": 90}, "themeVariables": {"fontFamily": "Arial", "fontSize": "16px", "primaryColor": "#111c2e", "primaryBorderColor": "#38bdf8", "primaryTextColor": "#e6eef8", "lineColor": "#94a3b8"}}}%%
 flowchart TD
-    classDef default padding:25px;
-    A[Nurse Intake<br/>Form] --> B[Streamlit<br/>Frontend]
-    B --> C[Flask Backend<br/>API]
-    C --> D[XGBoost Cardiac<br/>Risk Model]
-    C --> E[ESI-Style<br/>Acuity Engine]
-    E --> F[Red-Flag<br/>Safety Rules]
-    E --> G[Likely Resource<br/>Prediction]
-    D --> H[Generated<br/>Output Panel]
+    classDef default fill:#111c2e,stroke:#38bdf8,stroke-width:1.4px,color:#e6eef8,rx:14,ry:14;
+    classDef storage fill:#10243a,stroke:#22c55e,stroke-width:1.4px,color:#e6eef8,rx:14,ry:14;
+    classDef agent fill:#24183d,stroke:#a78bfa,stroke-width:1.4px,color:#e6eef8,rx:14,ry:14;
+
+    A["<div class='m-node'>Nurse Intake<br/>Form</div>"] --> B["<div class='m-node'>Streamlit<br/>Frontend</div>"]
+    B --> C["<div class='m-node'>Flask Backend<br/>API</div>"]
+    C --> D["<div class='m-node'>XGBoost Cardiac<br/>Risk Model</div>"]
+    C --> E["<div class='m-node'>ESI-Style<br/>Acuity Engine</div>"]
+    E --> F["<div class='m-node'>Red-Flag<br/>Safety Rules</div>"]
+    E --> G["<div class='m-node'>Likely Resource<br/>Prediction</div>"]
+    D --> H["<div class='m-node'>Generated<br/>Output Panel</div>"]
     F --> H
     G --> H
-    H --> I[Live Waiting-Room<br/>Queue]
-    I --> J[Queue Timing /<br/>Breach Status]
-    I --> K[Nurse<br/>Override]
-    K --> L[Persistent<br/>Audit Trail]
-    I --> M[Reassessment<br/>Engine]
+    H --> I["<div class='m-node'>Live Waiting-Room<br/>Queue</div>"]
+    I --> J["<div class='m-node'>Queue Timing<br/>Breach Status</div>"]
+    I --> K["<div class='m-node'>Nurse<br/>Override</div>"]
+    K --> L["<div class='m-node'>Persistent<br/>Audit Trail</div>"]
+    I --> M["<div class='m-node'>Reassessment<br/>Engine</div>"]
     M --> E
     M --> L
-    H --> N[Safety Sentinel<br/>Agent]
-    I --> O[Flow Coordinator<br/>Agent]
-    H --> P[Documentation<br/>Agent]
-    
-    subgraph RAG System
-        AI[LLM RAG and<br/>AI Committee]
-        RAG[(ChromaDB<br/>Guidelines)]
+    H --> N["<div class='m-node'>Safety Sentinel<br/>Agent</div>"]
+    I --> O["<div class='m-node'>Flow Coordinator<br/>Agent</div>"]
+    H --> P["<div class='m-node'>Documentation<br/>Agent</div>"]
+
+    subgraph RAG["RAG System"]
+        AI["<div class='m-node'>LLM RAG and<br/>AI Committee</div>"]
+        RAGDB[("<div class='m-node'>ChromaDB<br/>Guidelines</div>")]
     end
-    
+
     C --> AI
-    AI -->|Semantic Search| RAG
-    RAG -.->|Citations| AI
+    AI -->|Semantic Search| RAGDB
+    RAGDB -.->|Citations| AI
     AI --> H
+
+    class L,RAGDB storage;
+    class N,O,P,AI agent;
         </pre>
       </div>
     </section>
@@ -853,7 +877,12 @@ python app.py</pre>
 
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      securityLevel: 'loose',
+      flowchart: { htmlLabels: true, curve: 'basis', nodeSpacing: 70, rankSpacing: 90 }
+    });
   </script>
 </body>
 
