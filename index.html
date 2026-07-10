@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Triage Assist AI | Emergency Department Command Center</title>
-  <meta name="description" content="Triage Assist AI is an emergency department triage command-center prototype combining ESI-style acuity scoring, ML risk prediction, red-flag rules, live queue management, nurse override, reassessment monitoring, audit trails, and command agents." />
+  <meta name="description"
+    content="Triage Assist AI is an emergency department triage command-center prototype combining ESI-style acuity scoring, ML risk prediction, red-flag rules, live queue management, nurse override, reassessment monitoring, audit trails, and command agents." />
   <style>
     :root {
       --bg: #07111f;
@@ -22,7 +24,9 @@
       --shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -35,8 +39,14 @@
       line-height: 1.6;
     }
 
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     .container {
       width: min(1120px, 92%);
@@ -197,8 +207,14 @@
       margin-right: 6px;
       background: var(--red);
     }
-    .screen-dots span:nth-child(2) { background: var(--yellow); }
-    .screen-dots span:nth-child(3) { background: var(--green); }
+
+    .screen-dots span:nth-child(2) {
+      background: var(--yellow);
+    }
+
+    .screen-dots span:nth-child(3) {
+      background: var(--green);
+    }
 
     .esi-card {
       border-left: 6px solid #fb923c;
@@ -244,7 +260,9 @@
       font-size: 1.3rem;
     }
 
-    section { padding: 58px 0; }
+    section {
+      padding: 58px 0;
+    }
 
     .section-title {
       margin-bottom: 26px;
@@ -288,7 +306,8 @@
       font-size: 1.16rem;
     }
 
-    .card p, .card li {
+    .card p,
+    .card li {
       color: var(--muted);
     }
 
@@ -335,8 +354,14 @@
       font-weight: 900;
     }
 
-    .step h3 { margin: 0 0 6px; }
-    .step p { margin: 0; color: var(--muted); }
+    .step h3 {
+      margin: 0 0 6px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+    }
 
     .board {
       overflow-x: auto;
@@ -351,7 +376,8 @@
       min-width: 720px;
     }
 
-    th, td {
+    th,
+    td {
       padding: 14px 16px;
       border-bottom: 1px solid rgba(148, 163, 184, 0.18);
       text-align: left;
@@ -365,7 +391,9 @@
       letter-spacing: 0.06em;
     }
 
-    td { color: var(--text); }
+    td {
+      color: var(--text);
+    }
 
     .badge {
       display: inline-flex;
@@ -377,24 +405,44 @@
       border: 1px solid var(--border);
     }
 
-    .badge.red { color: #fecdd3; background: rgba(251, 113, 133, 0.12); border-color: rgba(251, 113, 133, 0.28); }
-    .badge.green { color: #bbf7d0; background: rgba(34, 197, 94, 0.12); border-color: rgba(34, 197, 94, 0.28); }
-    .badge.yellow { color: #fef08a; background: rgba(250, 204, 21, 0.12); border-color: rgba(250, 204, 21, 0.28); }
-    .badge.blue { color: #bae6fd; background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.28); }
+    .badge.red {
+      color: #fecdd3;
+      background: rgba(251, 113, 133, 0.12);
+      border-color: rgba(251, 113, 133, 0.28);
+    }
+
+    .badge.green {
+      color: #bbf7d0;
+      background: rgba(34, 197, 94, 0.12);
+      border-color: rgba(34, 197, 94, 0.28);
+    }
+
+    .badge.yellow {
+      color: #fef08a;
+      background: rgba(250, 204, 21, 0.12);
+      border-color: rgba(250, 204, 21, 0.28);
+    }
+
+    .badge.blue {
+      color: #bae6fd;
+      background: rgba(56, 189, 248, 0.12);
+      border-color: rgba(56, 189, 248, 0.28);
+    }
 
     .mermaid-box {
       background: #f8fafc;
       color: #0f172a;
       border-radius: 20px;
       padding: 22px;
-      overflow-x: auto;
       box-shadow: var(--shadow);
+      display: flex;
+      justify-content: center;
     }
-    
+
     .mermaid-box svg {
-      transform: scale(1.15);
-      transform-origin: top center;
-      margin: 20px 0 60px 0;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
     }
 
     .stack {
@@ -431,13 +479,29 @@
     }
 
     @media (max-width: 900px) {
-      .hero, .grid-3, .grid-2 { grid-template-columns: 1fr; }
-      .nav { align-items: flex-start; flex-direction: column; }
-      .nav-links { flex-wrap: wrap; }
-      .metric-grid { grid-template-columns: 1fr; }
+
+      .hero,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
@@ -447,7 +511,7 @@
         <a href="#workflow">Workflow</a>
         <a href="#agents">Agents</a>
         <a href="#architecture">Architecture</a>
-        <a href="#github">GitHub</a>
+        <a href="https://github.com/draculess99/Triage-Assist-AI">GitHub</a>
       </nav>
     </div>
   </header>
@@ -467,7 +531,8 @@
           <a class="btn" href="#workflow">See Workflow</a>
         </div>
         <div class="notice">
-          <strong>Demo-only clinical safety note:</strong> This project is an educational prototype. A licensed clinician must confirm or override all recommendations.
+          <strong>Demo-only clinical safety note:</strong> This project is an educational prototype. A licensed
+          clinician must confirm or override all recommendations.
         </div>
       </div>
 
@@ -494,39 +559,46 @@
       <div class="section-title">
         <h2>What the app does</h2>
         <p>
-          The project has evolved from a one-patient ML predictor into an emergency department workflow demo with acuity scoring, queue logic, reassessment, and clinical governance support.
+          The project has evolved from a one-patient ML predictor into an emergency department workflow demo with acuity
+          scoring, queue logic, reassessment, and clinical governance support.
         </p>
       </div>
       <div class="grid-3">
         <div class="card">
           <div class="icon">🚦</div>
           <h3>ESI-style acuity engine</h3>
-          <p>Recommends ESI-1 to ESI-5 using red flags, vital signs, chief complaint, resource need, pain score, and safety modifiers.</p>
+          <p>Recommends ESI-1 to ESI-5 using red flags, vital signs, chief complaint, resource need, pain score, and
+            safety modifiers.</p>
         </div>
         <div class="card">
           <div class="icon">🧠</div>
           <h3>ML + expert rules</h3>
-          <p>Uses XGBoost for cardiac risk while deterministic safety rules remain the source of truth for dangerous triage triggers.</p>
+          <p>Uses XGBoost for cardiac risk while deterministic safety rules remain the source of truth for dangerous
+            triage triggers.</p>
         </div>
         <div class="card">
           <div class="icon">🏥</div>
           <h3>Live waiting-room queue</h3>
-          <p>Evaluated patients receive a patient ID and are added to a persistent queue ranked by acuity, red flags, priority, and wait timing.</p>
+          <p>Evaluated patients receive a patient ID and are added to a persistent queue ranked by acuity, red flags,
+            priority, and wait timing.</p>
         </div>
         <div class="card">
           <div class="icon">👩‍⚕️</div>
           <h3>Nurse override workflow</h3>
-          <p>Nurses can accept, upgrade, or downgrade recommendations. High-risk downgrades require a clinical reason.</p>
+          <p>Nurses can accept, upgrade, or downgrade recommendations. High-risk downgrades require a clinical reason.
+          </p>
         </div>
         <div class="card">
           <div class="icon">📈</div>
           <h3>Reassessment engine</h3>
-          <p>Repeat vitals are compared against the original encounter to detect improvement, deterioration, and ESI changes.</p>
+          <p>Repeat vitals are compared against the original encounter to detect improvement, deterioration, and ESI
+            changes.</p>
         </div>
         <div class="card">
           <div class="icon">📋</div>
           <h3>Persistent audit trail</h3>
-          <p>Evaluations, queue actions, overrides, reassessments, and patient timeline events are written for governance and review.</p>
+          <p>Evaluations, queue actions, overrides, reassessments, and patient timeline events are written for
+            governance and review.</p>
         </div>
       </div>
     </section>
@@ -535,7 +607,8 @@
       <div class="section-title">
         <h2>Live queue concept</h2>
         <p>
-          The waiting-room board separates the current queue ESI from the AI recommendation and the nurse final decision, making overrides auditable instead of hidden.
+          The waiting-room board separates the current queue ESI from the AI recommendation and the nurse final
+          decision, making overrides auditable instead of hidden.
         </p>
       </div>
       <div class="board">
@@ -591,21 +664,56 @@
     <section id="workflow" class="container">
       <div class="section-title">
         <h2>Workflow</h2>
-        <p>The app is designed around a realistic human-in-the-loop triage flow: AI recommends, the nurse confirms, the queue updates, and the audit trail records the decision.</p>
+        <p>The app is designed around a realistic human-in-the-loop triage flow: AI recommends, the nurse confirms, the
+          queue updates, and the audit trail records the decision.</p>
       </div>
       <div class="workflow">
-        <div class="step"><div class="step-num">1</div><div><h3>Nurse enters triage intake</h3><p>Patient demographics, vitals, chief complaint, pain score, mental status, arrival mode, risk modifiers, and expected resources.</p></div></div>
-        <div class="step"><div class="step-num">2</div><div><h3>ESI engine and ML predictor run</h3><p>The deterministic ESI engine applies safety rules while the XGBoost model estimates cardiac risk.</p></div></div>
-        <div class="step"><div class="step-num">3</div><div><h3>Patient is added to the live queue</h3><p>The app assigns a patient ID, stores the encounter, displays the result panel, and updates the waiting-room board.</p></div></div>
-        <div class="step"><div class="step-num">4</div><div><h3>Nurse confirms or overrides</h3><p>Accepted and overridden decisions are persisted. High-risk downgrades require clinical documentation.</p></div></div>
-        <div class="step"><div class="step-num">5</div><div><h3>Reassessment detects change</h3><p>Repeat vitals can downgrade or upgrade acuity while keeping the same patient ID and preserving the timeline.</p></div></div>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Nurse enters triage intake</h3>
+            <p>Patient demographics, vitals, chief complaint, pain score, mental status, arrival mode, risk modifiers,
+              and expected resources.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>ESI engine and ML predictor run</h3>
+            <p>The deterministic ESI engine applies safety rules while the XGBoost model estimates cardiac risk.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Patient is added to the live queue</h3>
+            <p>The app assigns a patient ID, stores the encounter, displays the result panel, and updates the
+              waiting-room board.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <h3>Nurse confirms or overrides</h3>
+            <p>Accepted and overridden decisions are persisted. High-risk downgrades require clinical documentation.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div>
+            <h3>Reassessment detects change</h3>
+            <p>Repeat vitals can downgrade or upgrade acuity while keeping the same patient ID and preserving the
+              timeline.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="agents" class="container">
       <div class="section-title">
         <h2>Command agents</h2>
-        <p>Three visible agents make the workflow feel like a hospital command center while keeping clinical safety rules deterministic.</p>
+        <p>Three visible agents make the workflow feel like a hospital command center while keeping clinical safety
+          rules deterministic.</p>
       </div>
       <div class="grid-3">
         <div class="card">
@@ -616,7 +724,8 @@
         <div class="card">
           <div class="icon">🧭</div>
           <h3>Flow Coordinator Agent</h3>
-          <p>Reviews the live queue and recommends which patients should be roomed, reassessed, escalated, or fast-tracked.</p>
+          <p>Reviews the live queue and recommends which patients should be roomed, reassessed, escalated, or
+            fast-tracked.</p>
         </div>
         <div class="card">
           <div class="icon">📝</div>
@@ -629,7 +738,8 @@
     <section id="architecture" class="container">
       <div class="section-title">
         <h2>Architecture and data flow</h2>
-        <p>A Streamlit interface talks to a Flask backend, model artifacts, deterministic ESI logic, queue persistence, and audit logs.</p>
+        <p>A Streamlit interface talks to a Flask backend, model artifacts, deterministic ESI logic, queue persistence,
+          and audit logs.</p>
       </div>
       <div class="mermaid-box">
         <pre class="mermaid">
@@ -671,12 +781,14 @@ flowchart TD
     <section id="github" class="container">
       <div class="section-title">
         <h2>Run it locally</h2>
-        <p>Use this section for your GitHub Pages landing page. Replace the placeholder buttons with your actual repository and live demo links.</p>
+        <p>Use this section for your GitHub Pages landing page. Replace the placeholder buttons with your actual
+          repository and live demo links.</p>
       </div>
       <div class="grid-2">
         <div class="card">
           <h3>Install and launch</h3>
-          <pre style="white-space: pre-wrap; overflow-x: auto; background: rgba(2,6,23,.55); padding: 16px; border-radius: 14px; color: #dbeafe;">git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+          <pre
+            style="white-space: pre-wrap; overflow-x: auto; background: rgba(2,6,23,.55); padding: 16px; border-radius: 14px; color: #dbeafe;">git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
 cd YOUR_REPO
 python -m venv venv
 venv\Scripts\activate
@@ -694,11 +806,13 @@ python app.py</pre>
           <h3>Repository links</h3>
           <p>Add your real links here after pushing to GitHub.</p>
           <div class="cta-row">
-            <a class="btn primary" href="https://github.com/draculess99" target="_blank" rel="noopener">GitHub Profile</a>
-            <a class="btn" href="https://www.linkedin.com/in/gammaconsult/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn primary" href="https://github.com/draculess99/Triage-Assist-AI target=" _blank"
+              rel="noopener">GitHub
+              Profile</a>
           </div>
           <div class="notice">
-            <strong>Do not commit secrets:</strong> keep <code>.env</code>, API keys, local queue files, audit logs, <code>venv/</code>, and <code>.git/</code> out of the repository.
+            <strong>Do not commit secrets:</strong> keep <code>.env</code>, API keys, local queue files, audit logs,
+            <code>venv/</code>, and <code>.git/</code> out of the repository.
           </div>
         </div>
       </div>
@@ -717,4 +831,5 @@ python app.py</pre>
     mermaid.initialize({ startOnLoad: true, theme: 'default' });
   </script>
 </body>
+
 </html>
