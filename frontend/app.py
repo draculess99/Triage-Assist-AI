@@ -1915,8 +1915,10 @@ with st.sidebar:
     st.caption("Refresh fetches latest data. Clear Queue empties the waiting room.")
 
 st.markdown("---")
-st.subheader("🏥 Live Waiting Room Queue")
-render_command_board(st.session_state.get('last_esi'), key_prefix="global_board", show_actions=True)
+queue_col, _ = st.columns([12, 1])
+with queue_col:
+    st.subheader("🏥 Live Waiting Room Queue")
+    render_command_board(st.session_state.get('last_esi'), key_prefix="global_board", show_actions=True)
 st.markdown("---")
 
 st.warning("👉 **Select an operations workspace tab below to proceed:**")
@@ -1931,7 +1933,7 @@ tab1, tab_cmd, tab_audit, tab2, tab3, tab4, tab5 = st.tabs([
 ])
 
 with tab1:
-    col1, col2 = st.columns([1.6, 1])
+    col1, col2 = st.columns([2.5, 1])
 
     with col2:
         st.subheader("System Dashboard")
