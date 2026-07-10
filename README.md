@@ -16,6 +16,19 @@ The app demonstrates how an AI-assisted triage workflow can support nurses with:
 
 ---
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+## Project Links
+
+- **Live Demo:** https://safestaff-liinkedin-demo-production.up.railway.app/
+- **GitHub Repository:** https://github.com/draculess99/SafeStaff-LIinkedIn-DEMO
+- **LinkedIn:** https://www.linkedin.com/in/gammaconsult/
+- **Portfolio:** https://draculess99.github.io/VET-VTO-Forecasting/
+
+> **Prototype notice:** SafeStaff AI is a demonstration and decision-support prototype. It is not clinically validated and must not be used for real patient-care or staffing decisions without hospital governance, validation, security review, and human supervision. The system is intended to support nurse managers and staffing coordinators, not replace clinical or operational judgment.
+
+---
+
 ## Why this project matters
 
 Emergency departments often face overcrowding, long wait times, and patients whose condition can worsen while they wait. A triage nurse must quickly decide:
