@@ -435,17 +435,10 @@
     }
 
     .mermaid-box {
-      background: #f8fafc;
-      color: #0f172a;
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: var(--shadow);
+      width: 100%;
+      overflow-x: auto;
       text-align: center;
-    }
-
-    .mermaid-box svg {
-      max-width: 100% !important;
-      height: auto !important;
+      padding: 40px 0;
     }
 
     .stack {
@@ -746,7 +739,7 @@
       </div>
       <div class="mermaid-box">
         <pre class="mermaid">
-%%{init: {'themeVariables': { 'fontFamily': 'sans-serif'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'fontFamily': 'sans-serif', 'fontSize': '20px'}}}%%
 flowchart TD
     A[Nurse Intake<br/>Form] --> B[Streamlit<br/>Frontend]
     B --> C[Flask Backend<br/>API]
