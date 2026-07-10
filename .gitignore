@@ -39,6 +39,47 @@ MANIFEST
 *.spec
 
 # Installer logs
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyc
+*$py.class
+**/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
@@ -207,4 +248,24 @@ data/rf_model.pkl
 test_key.py 
 transactions.log 
 venv/ 
-test_key.py  .env  data/rf_model.pkl  transactions.log  venv/ 
+test_key.py  .env  data/rf_model.pkl  transactions.log  venv/
+
+# ------------------------------------------------------------
+# Local ad-hoc test / experiment scripts
+# ------------------------------------------------------------
+# Ignore one-off Streamlit/Playwright/debug scripts created while iterating.
+# Keeps proper app code tracked while hiding local scratch tests.
+test_*.py
+*_test.py
+check_*.py
+temp_test.py
+**/test_*.py
+**/*_test.py
+**/check_*.py
+**/temp_test.py
+
+# Optional local test outputs
+playwright-report/
+test-results/
+.trace/
+*.trace.zip

@@ -1,0 +1,126 @@
+[
+  {
+    "patient_id": "P-001",
+    "arrival_time": "2026-07-10T10:35:20",
+    "chief_complaint": "Chest pain / cardiac symptoms",
+    "age": 50,
+    "sex": "Male",
+    "esi_level": 2,
+    "esi_label": "ESI-2 \u2014 Emergent / High Risk",
+    "priority_score": 9.7,
+    "ai_esi_level": 2,
+    "ai_esi_label": "ESI-2 \u2014 Emergent / High Risk",
+    "ai_priority_score": 9.7,
+    "final_nurse_esi": "-",
+    "final_nurse_esi_level": null,
+    "nurse_decision": null,
+    "nurse_override_reason": "",
+    "red_flags": [
+      "Active chest-pain/cardiac complaint with elevated age or ML cardiac risk",
+      "Severe pain score: 9/10"
+    ],
+    "red_flag_count": 2,
+    "fast_track_eligible": false,
+    "recommended_resources": [
+      "ECG",
+      "Troponin / cardiac labs",
+      "Chest X-ray",
+      "Serial monitoring"
+    ],
+    "reassessment_interval": 0,
+    "next_action": "Room patient urgently / notify clinician",
+    "status": "Waiting \u2014 Escalate",
+    "vitals": {
+      "age": 50,
+      "sex": 1,
+      "cp": 4,
+      "trestbps": 120,
+      "chol": 200,
+      "fbs": 0,
+      "thalach": 80,
+      "chief_complaint": "Chest pain / cardiac symptoms",
+      "active_chest_pain": true,
+      "cardiac_ml_chest_pain_feature": "No active chest pain / not applicable",
+      "temperature_f": 98.6,
+      "respiratory_rate": 16,
+      "oxygen_saturation": 98,
+      "pain_score": 9,
+      "mental_status": "Alert",
+      "arrival_mode": "Walk-in",
+      "expected_resources": [],
+      "immunocompromised": false,
+      "pregnant": false,
+      "anticoagulants": false,
+      "suicidal_homicidal": false,
+      "can_walk": true
+    },
+    "notes": "",
+    "disease_probability": 0.9745415449142456,
+    "report": "**Multi-Agent Committee Assessment (Groq - llama-3.3-70b-versatile):**\n\n- Disease Probability (XGBoost): 97.5%\n- ESI-Style Priority Score: 9.7/10\n- Recommended Acuity: **ESI-2 \u2014 Emergent / High Risk**\n\n## \ud83d\udea6 ESI-Style Acuity / Priority Engine\n- **Recommended Acuity:** **ESI-2 \u2014 Emergent / High Risk**\n- **Clinical Priority Score:** **9.7/10**\n- **Urgency:** Immediate rooming and urgent clinician review\n- **Escalation Required:** **YES \u2014 escalate now**\n- **Fast Track Eligible:** **NO**\n- **Recommended Reassessment:** Immediate\n\n**Red Flags / Upgrade Triggers:**\n- Active chest-pain/cardiac complaint with elevated age or ML cardiac risk\n- Severe pain score: 9/10\n\n**Likely ED Resources:**\n- ECG\n- Troponin / cardiac labs\n- Chest X-ray\n- Serial monitoring\n\n**Why this acuity was selected:**\n- High-risk presentation requires immediate rooming/clinician review.\n\n**Recommended Next Actions:**\n- Room patient urgently / notify clinician\n- Apply focused protocol based on complaint\n- Begin monitoring and reassess if condition changes\n- Chest-pain pathway: ECG/troponin consideration per local protocol\n\n*Safety note: This is a demo decision-support layer. A licensed clinician must confirm or override the recommendation.*\n\n---\n\n**ESI Acuity:** **ESI-2 \u2014 Emergent / High Risk**\n**Escalation Required:** **YES \u2014 escalate now**\n\n**SOAP Note:**\n\n**Subjective:**\nThe patient presents with a chief complaint of a minor injury/laceration, accompanied by a severe pain score of **10/10**. The patient's history and complaint suggest a high-risk presentation that necessitates immediate attention and evaluation. The patient is alert and able to communicate, but the severity of the pain is a significant concern.\n\n**Objective:**\nThe patient's vital signs and relevant data include:\n- Age: 50\n- Sex: Male\n- Systolic Blood Pressure: 120 mmHg\n- Oxygen Saturation (SpO\u2082): 98%\n- Respiratory Rate: 16/min\n- Temperature: 98.6\u00b0F\n- Pain Score: 10/10\n- Mental Status: Alert\n- XGBoost Model Prediction: **97.5% probability of heart disease**\n- Legacy Cardiac ML Chest-Pain Feature: Suggests '1: Typical Angina', but the chief complaint and clinical notes do not confirm active chest pain.\n\n**Assessment:**\nBased on the patient's presentation and the deterministic ESI-style engine output, the patient is classified as **ESI-2 \u2014 Emergent / High Risk**, with a **Clinical Priority Score** of **9.7/10**. The patient's **Risk Level** is deemed **High Risk**, primarily due to the severe pain score (**10/10**) and the potential cardiac symptoms suggested by the legacy cardiac ML chest-pain feature. The presence of a severe pain score is a significant red flag that necessitates prompt evaluation and management.\n\n**Plan:**\n1. **Urgent Rooming and Clinician Notification:** The patient should be roomed urgently to facilitate immediate assessment and care. The clinician should be notified promptly to ensure timely review and decision-making, as per the **Chest Pain and Cardiac Risk Protocols** guideline [1].\n2. **Apply Focused Protocol:** A focused protocol should be applied based on the patient's chief complaint, including consideration of ECG and troponin labs as part of the chest-pain pathway, per local protocol.\n3. **Monitoring and Reassessment:** The patient's condition should be monitored closely, and reassessment should be performed if there are any changes in the patient's condition. This will ensure that any potential deterioration is identified and addressed promptly.\n4. **Continuous Evaluation:** The patient's condition should be continuously evaluated, and any changes in the clinical presentation that may necessitate further escalation of care should be promptly addressed.\n\n**Safety Note:**\nA licensed clinician must review, confirm, or override these recommendations to ensure appropriate patient care. The final decision for patient care rests with the attending clinician, who must consider all available information, including but not limited to the recommendations provided by this system.\n\n## \ud83d\udea6 ESI-Style Acuity / Priority Engine\n- **Recommended Acuity:** **ESI-2 \u2014 Emergent / High Risk**\n- **Clinical Priority Score:** **9.7/10**\n- **Urgency:** Immediate rooming and urgent clinician review\n- **Escalation Required:** **YES \u2014 escalate now**\n- **Fast Track Eligible:** **NO**\n- **Recommended Reassessment:** Immediate\n\n**Red Flags / Upgrade Triggers:**\n- Severe pain score: 10/10\n\n**Likely ED Resources:**\n- ECG\n- Troponin / cardiac labs\n- Chest X-ray\n- Serial monitoring\n\n**Why this acuity was selected:**\n- High-risk presentation requires immediate rooming/clinician review.\n\n**Recommended Next Actions:**\n- Room patient urgently / notify clinician\n- Apply focused protocol based on complaint\n- Begin monitoring and reassess if condition changes\n- Chest-pain pathway: ECG/troponin consideration per local protocol\n\n*Safety note: This is a demo decision-support layer. A licensed clinician must confirm or override the recommendation.*",
+    "esi_result": {
+      "esi_level": 2,
+      "esi_label": "ESI-2 \u2014 Emergent / High Risk",
+      "urgency": "Immediate rooming and urgent clinician review",
+      "priority_score": 9.7,
+      "review_interval_minutes": 0,
+      "escalation_required": true,
+      "fast_track_eligible": false,
+      "red_flags": [
+        "Active chest-pain/cardiac complaint with elevated age or ML cardiac risk",
+        "Severe pain score: 9/10"
+      ],
+      "rationale": [
+        "High-risk presentation requires immediate rooming/clinician review."
+      ],
+      "likely_resources": [
+        "ECG",
+        "Troponin / cardiac labs",
+        "Chest X-ray",
+        "Serial monitoring"
+      ],
+      "resource_count": 4,
+      "recommended_next_actions": [
+        "Room patient urgently / notify clinician",
+        "Apply focused protocol based on complaint",
+        "Begin monitoring and reassess if condition changes",
+        "Chest-pain pathway: ECG/troponin consideration per local protocol"
+      ],
+      "data_quality_warnings": [],
+      "human_override_required": true,
+      "source": "Deterministic ESI-style acuity engine + cardiac ML overlay only when active cardiac context is confirmed"
+    },
+    "agent_outputs": {
+      "safety_sentinel": {
+        "name": "Safety Sentinel Agent",
+        "icon": "\ud83d\udee1\ufe0f",
+        "status": "Escalation watch",
+        "severity": "high",
+        "summary": "Safety review complete: active queue recommendation is ESI-2.",
+        "findings": [
+          "ESI-2 requires urgent review/rooming.",
+          "Active chest-pain/cardiac complaint with elevated age or ML cardiac risk",
+          "Severe pain score: 9/10",
+          "Severe pain documented: 9/10."
+        ],
+        "recommendation": "Keep nurse/clinician confirmation required; do not downgrade without a documented clinical reason.",
+        "guardrail": "The deterministic ESI engine remains the safety source of truth; this agent explains and flags risk only."
+      },
+      "documentation": {
+        "name": "Documentation Agent",
+        "icon": "\ud83d\udcdd",
+        "status": "SBAR ready",
+        "severity": "info",
+        "summary": "Generated an SBAR-style handoff and audit-friendly triage note.",
+        "sbar": {
+          "Situation": "Patient presents with Chest pain / cardiac symptoms. Deterministic acuity recommendation is ESI-2.",
+          "Background": "XGBoost cardiac-risk probability: 97.5%. Arrival mode: Walk-in. Mental status: Alert.",
+          "Assessment": "Active chest-pain/cardiac complaint with elevated age or ML cardiac risk; Severe pain score: 9/10",
+          "Recommendation": "Room patient urgently / notify clinician; Apply focused protocol based on complaint; Begin monitoring and reassess if condition changes; +1 more"
+        },
+        "handoff_note": "ESI-2 generated for chief complaint: Chest pain / cardiac symptoms. Escalation required: yes. Fast-track eligible: no. Reassessment target: Immediate. Likely resources: ECG, Troponin / cardiac labs, Chest X-ray, Serial monitoring.",
+        "audit_summary": "Chest pain / cardiac symptoms \u2192 ESI-2; escalation=yes; reassess=Immediate."
+      }
+    },
+    "override": null
+  }
+]
